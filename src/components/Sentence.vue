@@ -21,7 +21,7 @@ watch(inputValue, () => {
 </script>
 
 <template>
-  <div>
+  <div class="text-xl">
     <div
       :class="{
         'text-red-500': isValidate && !isCorrect,
@@ -31,7 +31,11 @@ watch(inputValue, () => {
       {{ sentence.zh }}
     </div>
     <div class="flex space-x-2">
-      <el-input v-model="inputValue" @keyup.enter="onValidate" />
+      <el-input
+        class="!text-xl"
+        v-model="inputValue"
+        @keyup.enter="onValidate"
+      />
       <el-button @click="onValidate" tabindex="-1">验证</el-button>
     </div>
   </div>
