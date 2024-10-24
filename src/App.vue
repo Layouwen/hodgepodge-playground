@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ReciteArticle from "./components/ReciteArticle.vue";
+import ReciteArticle from "./page/ReciteArticle.vue";
 </script>
 
 <template>
