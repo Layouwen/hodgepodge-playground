@@ -1,22 +1,56 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { inject, onMounted, ref, watch } from "vue";
 import { debounce } from "lodash";
+import { articleStore } from "../utils";
 
-const props = defineProps<{ sentence: { zh: string; en: string } }>();
+export interface Sentence {
+  id: string;
+  zh: string;
+  en: string;
+}
 
-const inputValue = ref("");
-const isValidate = ref(false);
-const isCorrect = ref(false);
+const props = defineProps<{ sentence: Sentence }>();
+const articleId = inject<string>("articleId");
+const paragraphId = inject<string>("paragraphId");
+const sentenceId = props.sentence.id;
+
+const enAnswer = ref<string>("");
+const isValidate = ref<boolean>(false);
+const isCorrect = ref<boolean>(false);
 
 const onValidate = () => {
   isValidate.value = true;
-  isCorrect.value = inputValue.value.trim() === props.sentence.en.trim();
+  isCorrect.value = enAnswer.value.trim() === props.sentence.en.trim();
 };
 
 const onDebouncedValidate = debounce(onValidate, 250);
 
-watch(inputValue, () => {
+const onSaveSentence = () => {
+  articleStore.setSentenceEn(
+    articleId,
+    paragraphId,
+    sentenceId,
+    enAnswer.value
+  );
+};
+
+const onClearSentence = () => {
+  enAnswer.value = "";
+  isValidate.value = false;
+  isCorrect.value = false;
+  articleStore.setSentenceEn(articleId, paragraphId, sentenceId, "");
+};
+
+watch(enAnswer, () => {
   onDebouncedValidate();
+});
+
+onMounted(() => {
+  enAnswer.value = articleStore.getSentenceEn(
+    articleId,
+    paragraphId,
+    sentenceId
+  );
 });
 </script>
 
@@ -33,9 +67,11 @@ watch(inputValue, () => {
     <div class="flex space-x-2">
       <el-input
         class="!text-xl"
-        v-model="inputValue"
-        @keyup.enter="onValidate"
+        v-model="enAnswer"
+        @keyup.enter="onSaveSentence"
       />
+      <el-button @click="onSaveSentence" tabindex="-1">保存</el-button>
+      <el-button @click="onClearSentence" tabindex="-1">清空</el-button>
       <el-button @click="onValidate" tabindex="-1">验证</el-button>
     </div>
   </div>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import ReciteSentences from "./components/ReciteSentences.vue";
+import ReciteArticle from "./components/ReciteArticle.vue";
 </script>
 
 <template>
-  <ReciteSentences />
+  <ReciteArticle />
 </template>
 
 <style scoped></style>
