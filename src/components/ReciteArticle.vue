@@ -392,7 +392,7 @@ const 电子邮件类 = {
           id: "3y4z5a6b7c5",
           zh: "就我个人而言, 如果你 xxx 会更好.",
           en: "As far as I'm concerned, it would be better if you xxx."
-        }
+        },
         {
           id: "8v9w0x1y2z5",
           zh: "(介绍) 将组织各种各样的活动, 包括 xxx",
