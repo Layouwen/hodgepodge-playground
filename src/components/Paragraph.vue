@@ -20,7 +20,7 @@ provide("paragraphId", props.paragraph.id);
       <h2>{{ props.paragraph.title }}</h2>
       <p class="text-sm text-gray-500">{{ props.paragraph.description }}</p>
     </div>
-    <div>
+    <div class="space-y-2">
       <SentenceComponent
         v-for="sentence in props.paragraph.sentences"
         :key="sentence.zh"
