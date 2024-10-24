@@ -10,8 +10,8 @@ export interface Sentence {
 }
 
 const props = defineProps<{ sentence: Sentence }>();
-const articleId = inject<string>("articleId");
-const paragraphId = inject<string>("paragraphId");
+const articleId = inject<string>("articleId")!;
+const paragraphId = inject<string>("paragraphId")!;
 const sentenceId = props.sentence.id;
 
 const enAnswer = ref<string>("");

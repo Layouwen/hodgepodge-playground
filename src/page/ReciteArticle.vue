@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import ArticleComponent from "./Article.vue";
-import { Article } from "./Article.vue";
+import { ArticleComponent, Article } from "../components";
 
 const 选择与原因 = {
   id: "12fad7s98423",
@@ -391,7 +390,7 @@ const 电子邮件类 = {
         {
           id: "3y4z5a6b7c5",
           zh: "就我个人而言, 如果你 xxx 会更好.",
-          en: "As far as I'm concerned, it would be better if you xxx."
+          en: "As far as I'm concerned, it would be better if you xxx.",
         },
         {
           id: "8v9w0x1y2z5",
@@ -406,13 +405,13 @@ const 电子邮件类 = {
         {
           id: "8v9w0x1y2z6",
           zh: "(申请) 我相信我能胜任 xxx",
-          en: "I am confident that I am suitable for xxx"
+          en: "I am confident that I am suitable for xxx",
         },
         {
           id: "3y4z5a6b7c7",
           zh: "喜欢 xxx, 这极大地开阔了我的视野.",
-          en: "I am keen on xxx, which greatly widens my horizon."
-        }
+          en: "I am keen on xxx, which greatly widens my horizon.",
+        },
       ],
     },
     {
@@ -423,38 +422,38 @@ const 电子邮件类 = {
         {
           id: "8v9w0x1y2z7",
           zh: "(邀请) 总之, 我相信这次活动一定会取得圆满成功, 希望您能接受我的邀请.",
-          en: "In conclusion, I do believe the activity will be a great success and hop you can accept my invitation."
+          en: "In conclusion, I do believe the activity will be a great success and hop you can accept my invitation.",
         },
         {
           id: "3y4z5a6b7c9",
           zh: "(建议) 我希望这些建议能帮助你解决问题.",
-          en: "I hope these suggestions will be helpful to solve your problems."
+          en: "I hope these suggestions will be helpful to solve your problems.",
         },
         {
           id: "8v9w0x1y2z8",
           zh: "(介绍) 如果你想了解更多的细节, 请不要犹豫告诉我.",
-          en: "If you want to learn more details, don't hesitate to tell me."
+          en: "If you want to learn more details, don't hesitate to tell me.",
         },
         {
           id: "3y4z5a6b7c10",
           zh: "(申请) 我真诚地希望您能给我这个机会去 xxx",
-          en: "I sincerely hope you can give me this opportunity to xxx"
+          en: "I sincerely hope you can give me this opportunity to xxx",
         },
         {
           id: "8v9w0x1y2z9",
           zh: "如果您能考虑我的申请, 我将不胜感激.",
-          en: "I would appreciate it if you could take my application into consideration."
+          en: "I would appreciate it if you could take my application into consideration.",
         },
         {
           id: "3y4z5a6b7c11",
           zh: "(通用结束语) 我期待你的回复.",
-          en: "I look forward to hearing from you."
+          en: "I look forward to hearing from you.",
         },
         {
           id: "8v9w0x1y2z10",
           zh: "祝你生活愉快.",
-          en: "May you live a happy life."
-        }
+          en: "May you live a happy life.",
+        },
       ],
     },
     {
@@ -465,7 +464,7 @@ const 电子邮件类 = {
         {
           id: "8v9w0x1y2z11",
           zh: "诚挚的问候.",
-          en: "Yours, regards"
+          en: "Yours, regards",
         },
       ],
     },
@@ -484,8 +483,8 @@ const 描述类 = {
         {
           id: "3q4r5s6t7u",
           zh: "说到 xxx, 人们通常会想到 xxx",
-          en: "When it comes to xxx, people usually think of xxx"
-        }
+          en: "When it comes to xxx, people usually think of xxx",
+        },
       ],
     },
     {
@@ -496,18 +495,18 @@ const 描述类 = {
         {
           id: "3q4r5s6t7u4",
           zh: "我们能 xxx",
-          en: "We can xxx"
+          en: "We can xxx",
         },
         {
           id: "8v9w0x1y2z12",
           zh: "一方面",
-          en: "On the one hand"
+          en: "On the one hand",
         },
         {
           id: "3y4z5a6b7c13",
           zh: "另一方面",
-          en: "On the other hand"
-        }
+          en: "On the other hand",
+        },
       ],
     },
     {
@@ -518,18 +517,18 @@ const 描述类 = {
         {
           id: "8v9w0x1y2z13",
           zh: "此外, 有 xxx",
-          en: "In addition, there are xxx"
+          en: "In addition, there are xxx",
         },
         {
           id: "3y4z5a6b7c15",
           zh: "首先",
-          en: "Firstly"
+          en: "Firstly",
         },
         {
           id: "8v9w0x1y2z14",
           zh: "其次",
-          en: "Secondly"
-        }
+          en: "Secondly",
+        },
       ],
     },
     {
@@ -540,10 +539,10 @@ const 描述类 = {
         {
           id: "8v9w0x1y2z15",
           zh: "总之, 我很喜欢 xxx, 并将从中受益良多.",
-          en: "In a word, I like xxx very much and I will benefit a lot from it."
-        }
+          en: "In a word, I like xxx very much and I will benefit a lot from it.",
+        },
       ],
-    }
+    },
   ],
 };
 
