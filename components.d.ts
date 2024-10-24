@@ -11,8 +11,6 @@ declare module 'vue' {
     ElButton: typeof import('element-plus/es')['ElButton']
     ElInput: typeof import('element-plus/es')['ElInput']
     Paragraph: typeof import('./src/components/Paragraph.vue')['default']
-    ReciteArticle: typeof import('./src/components/ReciteArticle.vue')['default']
-    ReciteSentences: typeof import('./src/components/ReciteSentences.vue')['default']
     Sentence: typeof import('./src/components/Sentence.vue')['default']
   }
 }

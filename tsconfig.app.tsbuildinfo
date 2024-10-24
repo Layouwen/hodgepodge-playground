@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/vite-env.d.ts","./src/components/index.ts","./src/utils/articlestore.ts","./src/utils/index.ts","./src/app.vue","./src/components/article.vue","./src/components/paragraph.vue","./src/components/sentence.vue","./src/page/recitearticle.vue"],"version":"5.6.3"}
