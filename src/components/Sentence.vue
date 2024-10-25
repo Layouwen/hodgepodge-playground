@@ -21,7 +21,8 @@ const isCorrect = ref<boolean>(false);
 
 const onValidate = () => {
   isValidate.value = true;
-  isCorrect.value = enAnswer.value.trim() === props.sentence.en.trim();
+  const normalizeText = (text: string) => text.replace(/[，。]/g, (match) => match === '，' ? ',' : '.');
+  isCorrect.value = normalizeText(enAnswer.value.trim()) === normalizeText(props.sentence.en.trim());
 };
 
 const onDebouncedValidate = debounce(onValidate, 250);
@@ -84,7 +85,7 @@ onMounted(() => {
       }">
         {{ sentence.zh }}
       </div>
-      <el-button type="primary" @click="onPlayAudio">播放句子</el-button>
+      <el-button type="primary" @click="onPlayAudio" tabindex="-1">播放句子</el-button>
       <el-button type="info" @click="onShowEn" tabindex="-1">
         {{ isShowEn ? "隐藏答案" : "显示答案" }}
       </el-button>
