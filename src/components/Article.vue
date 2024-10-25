@@ -14,7 +14,7 @@ provide("articleId", props.article.id);
 </script>
 
 <template>
-  <div class="bg-[#fff] py-3 px-3">
+  <div class="bg-[#fff] p-3 rounded-sm shadow-md">
     <h1>{{ props.article.title }}</h1>
     <div class="space-y-2">
       <ParagraphComponent v-for="(paragraph, index) in props.article.paragraph" :key="paragraph.title"
