@@ -101,7 +101,7 @@ onMounted(() => {
           :autosize="{ minRows: 1, maxRows: 5 }" type="textarea" resize="none" />
       </div>
       <div class="flex justify-start md:justify-end space-x-2">
-        <el-button type="success" @click="onSaveSentence" tabindex="-1">保存</el-button>
+        <el-button type="success" @click="onSaveSentence">保存</el-button>
         <el-button type="warning" @click="onClearSentence" tabindex="-1">清空</el-button>
         <el-button type="primary" @click="onValidate" tabindex="-1">验证</el-button>
       </div>
