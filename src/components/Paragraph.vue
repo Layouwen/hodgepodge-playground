@@ -10,22 +10,21 @@ export interface Paragraph {
   sentences: Sentence[];
 }
 
-const props = defineProps<{ paragraph: Paragraph }>();
+const props = defineProps<{ paragraph: Paragraph, class?: string }>();
 provide("paragraphId", props.paragraph.id);
 </script>
 
 <template>
-  <div>
+  <div :class="props.class" class="py-2">
     <div class="flex items-end space-x-2">
       <h2>{{ props.paragraph.title }}</h2>
       <p class="text-sm text-gray-500">{{ props.paragraph.description }}</p>
     </div>
     <div class="space-y-2">
-      <SentenceComponent
-        v-for="sentence in props.paragraph.sentences"
-        :key="sentence.zh"
-        :sentence="sentence"
-      />
+      <SentenceComponent v-for="(sentence, index) in props.paragraph.sentences" :key="sentence.zh" :sentence="sentence"
+        :class="{
+          'border-solid border-[1px] border-b-0 border-l-0 border-r-0 border-[#5ea4ba]': index !== 0,
+        }" />
     </div>
   </div>
 </template>

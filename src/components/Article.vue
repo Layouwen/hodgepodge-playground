@@ -9,19 +9,18 @@ export interface Article {
   paragraph: Paragraph[];
 }
 
-const props = defineProps<{ article: Article }>();
+const props = defineProps<{ article: Article, class?: string }>();
 provide("articleId", props.article.id);
 </script>
 
 <template>
-  <div>
+  <div class="bg-[#fff] py-3 px-3" :class="props.class">
     <h1>{{ props.article.title }}</h1>
-    <div>
-      <ParagraphComponent
-        v-for="paragraph in props.article.paragraph"
-        :key="paragraph.title"
-        :paragraph="paragraph"
-      />
+    <div class="space-y-2">
+      <ParagraphComponent v-for="paragraph in props.article.paragraph" :key="paragraph.title" :paragraph="paragraph"
+        :class="{
+          'border-solid border-[1px] border-b-0 border-l-0 border-r-0 border-[#d149ce]': index !== 0,
+        }" />
     </div>
   </div>
 </template>

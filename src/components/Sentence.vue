@@ -10,7 +10,7 @@ export interface Sentence {
   en: string;
 }
 
-const props = defineProps<{ sentence: Sentence }>();
+const props = defineProps<{ sentence: Sentence, class?: string }>();
 const articleId = inject<string>("articleId")!;
 const paragraphId = inject<string>("paragraphId")!;
 const sentenceId = props.sentence.id;
@@ -76,18 +76,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="text-xl space-y-2">
+  <div class="text-xl space-y-2 py-2" :class="props.class">
     <div class="space-x-2 flex items-center">
-      <div
-        :class="{
-          'text-red-500': isValidate && !isCorrect,
-          'text-green-500': isValidate && isCorrect,
-        }"
-      >
+      <div :class="{
+        'text-red-500': isValidate && !isCorrect,
+        'text-green-500': isValidate && isCorrect,
+      }">
         {{ sentence.zh }}
       </div>
-      <el-button @click="onPlayAudio">播放句子</el-button>
-      <el-button @click="onShowEn" tabindex="-1">
+      <el-button type="primary" @click="onPlayAudio">播放句子</el-button>
+      <el-button type="info" @click="onShowEn" tabindex="-1">
         {{ isShowEn ? "隐藏答案" : "显示答案" }}
       </el-button>
     </div>
@@ -96,15 +94,16 @@ onMounted(() => {
         {{ sentence.en }}
       </div>
     </div>
-    <div class="flex space-x-2">
-      <el-input
-        class="!text-xl"
-        v-model="enAnswer"
-        @keyup.enter="onSaveSentence"
-      />
-      <el-button @click="onSaveSentence" tabindex="-1">保存</el-button>
-      <el-button @click="onClearSentence" tabindex="-1">清空</el-button>
-      <el-button @click="onValidate" tabindex="-1">验证</el-button>
+    <div class="flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
+      <div class="w-full">
+        <el-input class="!text-xl" v-model="enAnswer" @keyup.enter="onSaveSentence"
+          :autosize="{ minRows: 1, maxRows: 5 }" type="textarea" resize="none" />
+      </div>
+      <div class="flex justify-start md:justify-end space-x-2">
+        <el-button type="success" @click="onSaveSentence" tabindex="-1">保存</el-button>
+        <el-button type="warning" @click="onClearSentence" tabindex="-1">清空</el-button>
+        <el-button type="primary" @click="onValidate" tabindex="-1">验证</el-button>
+      </div>
     </div>
   </div>
 </template>
