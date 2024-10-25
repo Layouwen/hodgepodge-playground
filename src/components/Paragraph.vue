@@ -10,12 +10,12 @@ export interface Paragraph {
   sentences: Sentence[];
 }
 
-const props = defineProps<{ paragraph: Paragraph, class?: string }>();
+const props = defineProps<{ paragraph: Paragraph }>();
 provide("paragraphId", props.paragraph.id);
 </script>
 
 <template>
-  <div :class="props.class" class="py-2">
+  <div class="py-2">
     <div class="flex items-end space-x-2">
       <h2>{{ props.paragraph.title }}</h2>
       <p class="text-sm text-gray-500">{{ props.paragraph.description }}</p>

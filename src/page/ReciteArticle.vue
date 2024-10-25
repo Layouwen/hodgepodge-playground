@@ -558,9 +558,7 @@ const articles = ref<Article[]>([
 
 <template>
   <div class="space-y-2 bg-[#f5f5f5]">
-    <ArticleComponent v-for="article in articles" :key="article.id" :article="article" :class="{
-      'mb-2': true
-    }" />
+    <ArticleComponent v-for="article in articles" :key="article.id" :article="article" class="mb-2" />
   </div>
 </template>
 

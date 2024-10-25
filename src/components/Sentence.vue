@@ -10,7 +10,7 @@ export interface Sentence {
   en: string;
 }
 
-const props = defineProps<{ sentence: Sentence, class?: string }>();
+const props = defineProps<{ sentence: Sentence }>();
 const articleId = inject<string>("articleId")!;
 const paragraphId = inject<string>("paragraphId")!;
 const sentenceId = props.sentence.id;
@@ -76,7 +76,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="text-xl space-y-2 py-2" :class="props.class">
+  <div class="text-xl space-y-2 py-2">
     <div class="space-x-2 flex items-center">
       <div :class="{
         'text-red-500': isValidate && !isCorrect,
