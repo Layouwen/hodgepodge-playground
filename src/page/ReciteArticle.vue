@@ -193,13 +193,13 @@ const 问题性报告 = {
         },
         {
           id: "3l4m5n6o7p",
-          zh: "一方面",
-          en: "On the one hand",
+          zh: "首先, 我们的政府应该实施非常严格的政策来惩罚 xxx.",
+          en: "First of all, our government should carry out highly strict policies to punish xxx.",
         },
         {
           id: "8q9r0s1t2u",
-          zh: "另一方面",
-          en: "On the other hand",
+          zh: "其次, 我们也应该努力过一种环保的生活方式.",
+          en: "Secondly, we should also make efforts to live an eco-friendly way of life.",
         },
       ],
     },
