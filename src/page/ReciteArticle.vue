@@ -172,7 +172,7 @@ const 问题性报告 = {
         {
           id: "3r4s5t6u7v",
           zh: "一方面, xxx 对身体健康有显著的负面影响, 会导致严重的疾病.",
-          en: "On the one hand, xxx has significantly negative effects on body health and will result in serous diseases.",
+          en: "On the one hand, xxx has significantly negative effects on body health and will result in serious diseases.",
         },
         {
           id: "8w9x0y1z2a",
